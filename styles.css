@@ -1,0 +1,141 @@
+/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#bet-button {
+    /* Your button styling here */
+    /* For example: */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 20px;
+    transition: background-color 0.3s ease;
+}
+
+#bet-button:hover {
+    background-color: #0056b3;
+}
+
+/* Slot machine container */
+.slot-machine {
+    background-color: goldenrod;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* CSS animations for the slot machine reels */
+@keyframes spin-column-1 {
+    0% { transform: translateY(-300%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes spin-column-2 {
+    0% { transform: translateY(-300%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes spin-column-3 {
+    0% { transform: translateY(-300%); }
+    100% { transform: translateY(0); }
+}
+
+/* Apply the animation to the reel elements */
+.reel-spin-column-1 {
+    animation: spin-column-1 3s ease-out; /* Adjust the duration and timing function as needed */
+}
+
+.reel-spin-column-2 {
+    animation: spin-column-2 3s ease-out; /* Adjust the duration and timing function as needed */
+}
+
+.reel-spin-column-3 {
+    animation: spin-column-3 3s ease-out; /* Adjust the duration and timing function as needed */
+}
+
+
+/* Balance display styles */
+.balance-display {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Input section styles */
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-section label {
+    margin-right: 10px;
+}
+
+.input-section input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.input-section button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Reel container styles */
+.reels {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Reel styles */
+.reel {
+    width: 100px; /* Adjust this value as needed */
+    height: 100px; /* Adjust this value as needed */
+    background-size: cover; /* or contain, or specify width and height */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+
+/* Spin button styles */
+#spin-button {
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#spin-button:hover {
+    background-color: #45a049;
+}

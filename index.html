@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="slot-machine">
+    <!-- Balance display -->
+    <div class="balance-display">Balance: <span id="balance">0</span> Rs</div>
+
+    <!-- Deposit money input -->
+    <div class="input-section">
+        <label for="deposit-input">Deposit Budget:</label>
+        <input type="number" id="deposit-input" placeholder="Enter amount">
+        <button id="deposit-button">Deposit</button>
+    </div>
+
+    <!-- Bet section -->
+    <div class="input-section">
+        <label for="lines-input">Number of lines to bet on:</label>
+        <input type="number" id="lines-input" placeholder="Enter number of lines">
+        <label for="bet-input">Bet amount per line:</label>
+        <input type="number" id="bet-input" placeholder="Enter bet amount">
+        <button id="bet-button">Place Bet</button>
+    </div>
+
+    <!-- Slot machine reels -->
+    <!-- Slot machine reels -->
+    <div class="reels">
+        <div class="reel" id="reel1"></div>
+        <div class="reel" id="reel2"></div>
+        <div class="reel" id="reel3"></div>
+    </div>
+    <div class="reels">
+        <div class="reel" id="reel4"></div>
+        <div class="reel" id="reel5"></div>
+        <div class="reel" id="reel6"></div>
+    </div>
+    <div class="reels">
+        <div class="reel" id="reel7"></div>
+        <div class="reel" id="reel8"></div>
+        <div class="reel" id="reel9"></div>
+    </div>
+
+
+    <!-- Spin button -->
+    <button id="spin-button">Spin</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
