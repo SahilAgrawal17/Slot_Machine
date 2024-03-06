@@ -22,7 +22,7 @@ const updateBalanceDisplay = () => {
     const balanceSpan = document.getElementById("balance");
     balanceSpan.textContent = balance.toFixed(2); // Assuming balance is a floating-point number
 };
-let flag=0;
+let flag=false;
 // Function to handle depositing money
 const deposit = () => {
     const depositButton = document.getElementById("deposit-button");
@@ -47,10 +47,7 @@ const displayMessage = (message) => {
 };
 // Function to handle spinning the slot machine
 const spin = () => {
-    if(flag==0){
-        balance-= totalBetAmount;
-        }
-    if(balance >=0 && betAmount>0){
+    if(balance >0 && betAmount>0){
         const reels = [];
         for (let i = 0; i < COLS; i++) {
             const reelSymbols = [];
@@ -72,6 +69,17 @@ const spin = () => {
             }
             reels.push(reelSymbols);
         }
+        if (!flag) {
+            const lines = parseInt(document.getElementById("lines-input").value);
+            const betAmount = parseFloat(document.getElementById("bet-input").value);
+            const totalBetAmount = lines * betAmount;
+    
+            balance -= totalBetAmount;
+            updateBalanceDisplay();
+        }
+    
+        // Reset the betPlaced flag
+        flag = false;
         printReels(reels); // Update the display with the new symbols
         for (let i = 0; i < COLS; i++) {
             const reelElements = document.querySelectorAll(`.reel-${i + 1}`);
@@ -116,14 +124,11 @@ const spin = () => {
                 }
             }
         }
-        
-    }// Update the balance display
-
     balance += winnings;
-    updateBalanceDisplay(); 
+    updateBalanceDisplay();
+        }// Update the balance display
 };
 let betAmount = 0;
-let totalBetAmount=0;
 const placeBet = () => {
     const betButton = document.getElementById("bet-button");
     const linesInput = document.getElementById("lines-input");
@@ -133,7 +138,7 @@ const placeBet = () => {
         const lines = parseInt(linesInput.value);
         betAmount = parseFloat(betInput.value); // Assign value to betAmount
         // const totalBetAmount = lines * betAmount;
-        totalBetAmount = lines * betAmount;
+        const totalBetAmount = lines * betAmount;
         
         if (isNaN(lines) || isNaN(betAmount) || lines <= 0 || betAmount <= 0) {
             console.log("Invalid input, try again.");
@@ -150,9 +155,8 @@ const placeBet = () => {
             console.log("Bet amount exceeds balance.");
             return;
         }
-        flag=1;
+        flag=true;
         balance -= totalBetAmount; // Deduct the bet amount from the balance
-        // moneybet = totalBetAmount;
         updateBalanceDisplay(); // Update the balance display
     });
 };
